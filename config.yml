@@ -5,3 +5,4 @@ with:
 metas:
   py_modules:
     - pn_encoder.py
+    - pn.py
