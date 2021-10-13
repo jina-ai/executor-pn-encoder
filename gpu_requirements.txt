@@ -1,0 +1,5 @@
+tensorflow>=2.5.0
+numpy
+trimesh
+Pillow
+jina-commons @ git+https://github.com/jina-ai/jina-commons.git@v0.0.2#egg=jina-commons

@@ -1,0 +1,7 @@
+jtype: PNEncoder
+with:
+  ckpt_path: 'ckpt/ckpt_True'
+
+metas:
+  py_modules:
+    - pn_encoder.py

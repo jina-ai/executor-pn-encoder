@@ -1,0 +1,8 @@
+jtype: Flow
+version: '1'
+with:
+  workspace: $WORKSPACE
+executors:
+  - name: encoder
+    uses:
+      jtype: PNEncoder
