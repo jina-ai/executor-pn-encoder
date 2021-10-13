@@ -46,15 +46,6 @@ def test_encode_docs(default_encoder, docs):
         assert doc.embedding.shape == (128,)
 
 
-@pytest.mark.gpu
-def test_encode_docs_gpu(docs):
-    encoder = PNEncoder(device='/GPU:0')
-    encoder.encode(docs)
-    for doc in docs:
-        assert doc.embedding is not None
-        assert doc.embedding.shape == (128,)
-
-
 @pytest.mark.parametrize('batch_size', [1, 2, 4, 8])
 def test_batch_size(default_encoder, batch_size):
     docs = DocumentArray([Document(blob=np.random.rand(2048, 3)) for _ in range(32)])
