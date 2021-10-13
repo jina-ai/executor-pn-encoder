@@ -4,6 +4,8 @@ import numpy as np
 import pytest
 from jina import Document, DocumentArray
 
+from pn_encoder import PNEncoder
+
 
 @pytest.fixture
 def docs():
@@ -39,6 +41,15 @@ def test_none_docs(default_encoder):
 
 def test_encode_docs(default_encoder, docs):
     default_encoder.encode(docs)
+    for doc in docs:
+        assert doc.embedding is not None
+        assert doc.embedding.shape == (128,)
+
+
+@pytest.mark.gpu
+def test_encode_docs_gpu(docs):
+    encoder = PNEncoder(device='/GPU:0')
+    encoder.encode(docs)
     for doc in docs:
         assert doc.embedding is not None
         assert doc.embedding.shape == (128,)
