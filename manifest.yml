@@ -1,0 +1,5 @@
+manifest_version: 1
+name: PNEncoder
+description: '`PNEncoder` encodes a Document containing point sets (point cloud) in its blob and adds embedding to it using the pointnet model'
+url: https://github.com/jina-ai/executor-pn-encoder
+keywords: [3d, mesh, pointnet, encoder]
