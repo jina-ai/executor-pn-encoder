@@ -4,8 +4,6 @@ import numpy as np
 import pytest
 from jina import Document, DocumentArray
 
-from pn_encoder import PNEncoder
-
 
 @pytest.fixture
 def docs():
