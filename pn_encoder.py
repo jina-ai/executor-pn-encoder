@@ -18,7 +18,7 @@ class PNEncoder(Executor):
     def __init__(
             self,
             ckpt_path: str = 'ckpt/ckpt_True',
-            traversal_paths: Iterable[str] = ('r',),
+            traversal_paths: str = 'r',
             batch_size: int = 32,
             device: str = '/CPU:0',
             **kwargs):

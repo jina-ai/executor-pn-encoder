@@ -63,12 +63,12 @@ def test_batch_size(default_encoder, batch_size):
     ],
 )
 def test_traversal_path(
-    traversal_paths: Tuple[str],
+    traversal_paths: str,
     counts: Tuple[str, int],
     nested_docs: DocumentArray,
     default_encoder,
 ):
     default_encoder.encode(nested_docs, parameters={"traversal_paths": traversal_paths})
     for path, count in counts:
-        embeddings = nested_docs.traverse_flat([path]).get_attributes('embedding')
+        embeddings = nested_docs.traverse_flat(path).get_attributes('embedding')
         assert len([em for em in embeddings if em is not None]) == count
